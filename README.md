@@ -215,7 +215,7 @@ This project builds upon research in:
 
 - **Issues**: Report bugs and request features via GitHub Issues
 - **Discussions**: Join technical discussions in GitHub Discussions
-- **Documentation**: Visit our [documentation site](https://yourusername.github.io/vertiport-autonomy)
+- **Documentation**: Visit our [documentation site](https://n-cryptd.github.io/vertiport-autonomy)
 
 ## 🏆 Acknowledgments
 

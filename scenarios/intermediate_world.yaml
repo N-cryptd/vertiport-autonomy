@@ -1,0 +1,76 @@
+# Intermediate World Scenario - Phase 2 Curriculum Learning
+# Objective: Introduce safety constraints gradually
+
+vertiport:
+  fatos:
+    - id: "FATO_A"
+      position: {x: 0, y: 0, z: 0}
+      approach_path:
+        - {x: 0, y: 20, z: 20}
+        - {x: 0, y: 10, z: 10}
+        - {x: 0, y: 0, z: 2}
+    - id: "FATO_B"
+      position: {x: 10, y: 0, z: 0}
+      approach_path:
+        - {x: 10, y: 20, z: 20}
+        - {x: 10, y: 10, z: 10}
+        - {x: 10, y: 0, z: 2}
+
+  holding_points:
+    - id: "HP_A"
+      position: {x: 0, y: 15, z: 15}
+      associated_fato: "FATO_A"
+    - id: "HP_B"
+      position: {x: 10, y: 15, z: 15}
+      associated_fato: "FATO_B"
+
+  gates:
+    - id: "GATE_NORTH_1"
+      position: {x: -15, y: 25, z: 0}
+      is_entry: true
+      is_exit: false
+    - id: "GATE_NORTH_2"
+      position: {x: -7.5, y: 25, z: 0}
+      is_entry: true
+      is_exit: false
+    - id: "GATE_NORTH_3"
+      position: {x: 0, y: 25, z: 0}
+      is_entry: true
+      is_exit: false
+    - id: "GATE_NORTH_4"
+      position: {x: 7.5, y: 25, z: 0}
+      is_entry: true
+      is_exit: false
+    - id: "GATE_NORTH_5"
+      position: {x: 15, y: 25, z: 0}
+      is_entry: true
+      is_exit: false
+    - id: "GATE_NORTH_6"
+      position: {x: -10, y: 30, z: 0}
+      is_entry: true
+      is_exit: false
+    - id: "GATE_NORTH_7"
+      position: {x: 10, y: 30, z: 0}
+      is_entry: true
+      is_exit: false
+    - id: "GATE_SOUTH"
+      position: {x: 0, y: -25, z: 0}
+      is_entry: false
+      is_exit: true
+
+  operational_altitude: 50.0
+
+traffic:
+  profile_type: "steady_flow"
+  arrival_rate: 0.4  # Slightly increased difficulty
+  max_drones: 7      # More drones for collision avoidance learning
+  spawn_interval: 25
+
+simulation:
+  time_step: 0.1
+  drone_speed: 5.0
+  drone_radius: 0.5
+  min_separation: 6.0
+  arrival_radius: 1.5  # Tighter tolerance
+  ground_time: 4.0
+  curriculum_level: 2  # Phase 2 - Intermediate World

@@ -1,0 +1,68 @@
+# Easy World Scenario - Phase 1 Curriculum Learning
+# Objective: Learn basic navigation and mission completion without catastrophic penalties
+
+vertiport:
+  fatos:
+    - id: "FATO_A"
+      position: {x: 0, y: 0, z: 0}
+      approach_path:
+        - {x: 0, y: 20, z: 20}
+        - {x: 0, y: 10, z: 10}
+        - {x: 0, y: 0, z: 2}
+    - id: "FATO_B"
+      position: {x: 10, y: 0, z: 0}
+      approach_path:
+        - {x: 10, y: 20, z: 20}
+        - {x: 10, y: 10, z: 10}
+        - {x: 10, y: 0, z: 2}
+
+  holding_points:
+    - id: "HP_A"
+      position: {x: 0, y: 15, z: 15}
+      associated_fato: "FATO_A"
+    - id: "HP_B"
+      position: {x: 10, y: 15, z: 15}
+      associated_fato: "FATO_B"
+
+  gates:
+    - id: "GATE_NORTH_1"
+      position: {x: -10, y: 25, z: 0}
+      is_entry: true
+      is_exit: false
+    - id: "GATE_NORTH_2"
+      position: {x: -5, y: 25, z: 0}
+      is_entry: true
+      is_exit: false
+    - id: "GATE_NORTH_3"
+      position: {x: 0, y: 25, z: 0}
+      is_entry: true
+      is_exit: false
+    - id: "GATE_NORTH_4"
+      position: {x: 5, y: 25, z: 0}
+      is_entry: true
+      is_exit: false
+    - id: "GATE_NORTH_5"
+      position: {x: 10, y: 25, z: 0}
+      is_entry: true
+      is_exit: false
+    - id: "GATE_SOUTH"
+      position: {x: 0, y: -25, z: 0}
+      is_entry: false
+      is_exit: true
+
+  operational_altitude: 50.0
+
+traffic:
+  profile_type: "steady_flow"
+  arrival_rate: 0.3  # Reduced for easier learning
+  max_drones: 5     # Fewer drones for simpler scenarios
+  spawn_interval: 30
+
+simulation:
+  time_step: 0.1
+  drone_speed: 5.0
+  drone_radius: 0.5
+  min_separation: 6.0
+  arrival_radius: 2.0  # Larger radius for easier waypoint reaching
+  ground_time: 3.0     # Shorter ground time
+  curriculum_level: 1  # Phase 1 - Easy World
